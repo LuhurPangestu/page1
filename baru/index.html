@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lowongan Programmer JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lowongan Programmer JavaScript</h1>
+        <p class="job-desc">Memastikan program yang dibuat sudah sesuai dengan requirement.</p>
+        
+        <h2>Daily Activities</h2>
+        <ul id="activity-list">
+            <li>Memahami requirement program yang akan dibuat</li>
+            <li>Membuat unit test sesuai dengan requirement</li>
+            <li>Membuat program sesuai dengan requirement yang diberikan</li>
+            <li>Memvalidasi kepada pihak user apakah program sudah sesuai dengan kebutuhan</li>
+        </ul>
+        
+        <button onclick="checkEligibility()">Cek Kelayakan Melamar</button>
+        <p id="result"></p>
+    </div>
+    
+    <script>
+        function checkEligibility() {
+            const daily_activities = [
+                "Memahami requirement program yang akan dibuat",
+                "Membuat unit test sesuai dengan requirement",
+                "Membuat program sesuai dengan requirement yang diberikan",
+                "Memvalidasi kepada pihak user apakah program sudah sesuai dengan kebutuhan"
+            ];
+
+            const diri_anda = [...daily_activities]; // Simulasi input user
+
+            if (JSON.stringify(daily_activities) === JSON.stringify(diri_anda)) {
+                document.getElementById("result").innerText = "Silakan melamar!";
+                document.getElementById("result").style.color = "green";
+            } else {
+                document.getElementById("result").innerText = "Mohon periksa kembali kesesuaian pengalaman Anda.";
+                document.getElementById("result").style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
